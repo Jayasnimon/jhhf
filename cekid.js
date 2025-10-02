@@ -1,12 +1,11 @@
-async function cekId(userId, gameId) {
-  if (!userId || !gameID) {
-    throw new Error("Parameter Tidak Valid!");
-    console.log("Tidak Valid");
+async function cekIdFF(userId) {
+  if (!userId) {
+    throw new Error("User ID wajib diisi!");
   }
 
-   try {
+  try {
     const response = await fetch(
-      `https://api-cek-id-game-ten.vercel.app/api/check-id-game?type_name=${gameId}&userId=${userId}`,
+      `https://api-cek-id-game-ten.vercel.app/api/check-id-game?type_name=free_fire&userId=${userId}`,
       {
         method: "GET",
         headers: {
@@ -20,11 +19,12 @@ async function cekId(userId, gameId) {
     }
 
     const data = await response.json();
-    return data; // kembalikan data JSON
+    return data;
   } catch (err) {
     console.error("Error:", err);
     return { error: true, message: err.message };
   }
 }
 
-window.cekId = cekId;
+// ✅ supaya bisa dipanggil dari HTML
+window.cekIdFF = cekIdFF;
