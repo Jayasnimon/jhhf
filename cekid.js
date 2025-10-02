@@ -4,7 +4,7 @@ async function cekId(userId, zoneId) {
     console.log("Tidak Valid");
   }
 
-  functioncheckNickname() {
+   try {
     const response = await fetch(
       `https://api-cek-id-game-ten.vercel.app/api/check-id-game?type_name=${gameId}&userId=${userId}`,
       {
