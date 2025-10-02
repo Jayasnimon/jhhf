@@ -26,3 +26,5 @@ async function cekId(userId, zoneId) {
     return { error: true, message: err.message };
   }
 }
+
+window.cekId = cekId;
