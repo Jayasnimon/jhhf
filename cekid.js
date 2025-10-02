@@ -1,4 +1,4 @@
-async function cekId(userId, zoneId) {
+async function cekId(userId, gameId) {
   if (!userId || !gameID) {
     throw new Error("Parameter Tidak Valid!");
     console.log("Tidak Valid");
