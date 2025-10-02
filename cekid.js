@@ -1,12 +1,12 @@
 async function cekId(userId, zoneId) {
-  if (!userId) {
+  if (!userId || !gameID) {
     throw new Error("Parameter Tidak Valid!");
     console.log("Tidak Valid");
   }
 
   try {
     const response = await fetch(
-      `https://api-cek-id-game-ten.vercel.app/api/check-id-game?type_name=freefire&userId=${userId}`,
+      `https://api-cek-id-game-ten.vercel.app/api/check-id-game?type_name=${gameId}&userId=${userId}`,
       {
         method: "GET",
         headers: {
